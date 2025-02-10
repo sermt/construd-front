@@ -1,0 +1,34 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email" />
+        @if(loginForm.get('email')?.invalid){<mat-error
+          >Correo inválido</mat-error
+        >}
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" type="password" />
+        <input matInput formControlName="email" type="email" />
+        @if(loginForm.get('password')?.invalid){<mat-error
+          >Mínimo 6 caracteres</mat-error
+        >}
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="loginForm.invalid"
+      >
+        Ingresar
+      </button>
+    </form>
+  </mat-card>
+  <mat-card-subtitle>¿No tienes cuenta?</mat-card-subtitle>
+  <span mat-raised-button color="warn" >
+    Contacta a un administrador
+  </span>
+</div>
