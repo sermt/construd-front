@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span> {{appTitle()}} </span>
+  <span class="spacer"></span>
+
+  <button mat-button>Inicio</button>
+  <button mat-button>Personal</button>
+  <button mat-button>Inventario</button>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>Perfil</button>
+    <button mat-menu-item>Configuración</button>
+    <button mat-menu-item>Cerrar sesión</button>
+  </mat-menu>
+</mat-toolbar>
